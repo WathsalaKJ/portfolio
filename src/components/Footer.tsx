@@ -13,9 +13,22 @@ export default function Footer() {
       </a>
 
       <div className="footer__socials">
-        <a href="#" aria-label="LinkedIn">LinkedIn</a>
-        <a href="#" aria-label="GitHub">GitHub</a>
-        <a href="#" aria-label="Instagram">Instagram</a>
+        <a
+          href="https://www.linkedin.com/in/sanduniwathsala"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/WathsalaKJ"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          GitHub
+        </a>
       </div>
 
       <p className="footer__copyright">

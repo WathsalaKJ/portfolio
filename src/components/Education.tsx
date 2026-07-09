@@ -8,14 +8,14 @@ type EducationItem = {
 
 const EDUCATION: EducationItem[] = [
   {
-    period: "2023 — Present",
-    title: "BSc (Hons) in Information Technology",
-    place: "Replace with your university",
+    period: "2024 — Present",
+    title: "BSc (Hons) in Information Technology & Manegement",
+    place: "University Of Moratuwa",
   },
   {
     period: "2019 — 2022",
     title: "G.C.E. Advanced Level",
-    place: "Replace with your school",
+    place: "Badulla Central College",
   },
 ];
 

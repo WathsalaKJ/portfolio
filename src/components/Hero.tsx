@@ -15,7 +15,7 @@ export default function Hero() {
             <p className="hero__tag-1">
               <strong>Software</strong> Enthusiast
             </p>
-            <p className="hero__tag-2">Creative Artist</p>
+            <p className="hero__tag-2">Software Developer</p>
             <p className="hero__tag-3">Design. Code. Create.</p>
           </div>
         </div>
