@@ -1,0 +1,104 @@
+.skills {
+  padding: 6rem 1.5rem;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(94, 168, 255, 0.1) 0, transparent 30%),
+    radial-gradient(circle at 85% 15%, rgba(94, 168, 255, 0.08) 0, transparent 28%),
+    radial-gradient(circle at 70% 80%, rgba(94, 168, 255, 0.09) 0, transparent 32%),
+    radial-gradient(circle at 25% 85%, rgba(94, 168, 255, 0.07) 0, transparent 26%),
+    var(--bg-800);
+}
+
+.skills::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(138, 180, 255, 0.18) 1.5px, transparent 1.5px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, #000 30%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, #000 30%, transparent 90%);
+  pointer-events: none;
+}
+
+.skills__rows {
+  position: relative;
+  max-width: 980px;
+  margin: 4rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.skills__row {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.skills__category {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  text-align: right;
+  color: var(--text);
+}
+
+.skills__icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+}
+
+.skills__badge {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: #f4f7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(94, 168, 255, 0.4);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45), 0 0 18px rgba(94, 168, 255, 0.12);
+  transition: transform 0.25s, box-shadow 0.25s;
+  position: relative;
+}
+
+.skills__badge:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.5), 0 0 28px var(--accent-glow);
+}
+
+.skills__badge img {
+  width: 52%;
+  height: 52%;
+  object-fit: contain;
+}
+
+.skills__badge[data-fallback]::after {
+  content: attr(data-fallback);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--bg-800);
+  text-align: center;
+  padding: 0 6px;
+}
+
+@media (max-width: 760px) {
+  .skills__row {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .skills__category {
+    text-align: center;
+  }
+
+  .skills__icons {
+    justify-content: center;
+    gap: 1.1rem;
+  }
+
+  .skills__badge {
+    width: 72px;
+    height: 72px;
+  }
+}
