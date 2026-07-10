@@ -1,4 +1,4 @@
-import profile from "../assets/profile-placeholder.svg";
+import profile from "../assets/profile-cutout.png";
 import "./Hero.css";
 
 export default function Hero() {

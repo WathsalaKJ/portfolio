@@ -1,4 +1,4 @@
-import profile from "../assets/profile-placeholder.svg";
+import profile from "../assets/profile.png";
 import "./About.css";
 
 export default function About() {

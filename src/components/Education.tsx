@@ -9,7 +9,7 @@ type EducationItem = {
 const EDUCATION: EducationItem[] = [
   {
     period: "2024 — Present",
-    title: "BSc (Hons) in Information Technology & Manegement",
+    title: "BSc (Hons) in Information Technology & Management",
     place: "University Of Moratuwa",
   },
   {
