@@ -36,8 +36,6 @@ const SKILL_GROUPS: SkillGroup[] = [
     category: "Design",
     skills: [
       { name: "Figma", icon: `${DEVICON}/figma/figma-original.svg` },
-      { name: "Illustrator", icon: `${DEVICON}/illustrator/illustrator-plain.svg` },
-      { name: "Photoshop", icon: `${DEVICON}/photoshop/photoshop-original.svg` },
       { name: "GIMP", icon: `${DEVICON}/gimp/gimp-original.svg` },
     ],
   },
