@@ -357,16 +357,53 @@ section {
 .hero__watermark {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  right: 0;
+  height: 1em;
+  line-height: 1;
+  transform: translateY(-50%);
+  overflow: hidden;
   font-size: clamp(5rem, 22vw, 21rem);
   font-weight: 900;
-  letter-spacing: 0.02em;
   color: var(--watermark);
   white-space: nowrap;
   -webkit-user-select: none;
   user-select: none;
   pointer-events: none;
+}
+
+/* Each letter crosses the screen on its own; the stagger between delays
+   sets the spacing between letters. Delays are reversed (6 - i) so the
+   last letter enters first and the name reads left-to-right in motion. */
+.hero__watermark span {
+  --stagger: 2.4s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateX(-130%);
+  animation: watermark-letter 18s linear infinite;
+  animation-delay: calc((6 - var(--i)) * var(--stagger));
+}
+
+@keyframes watermark-letter {
+  from {
+    transform: translateX(-130%);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__watermark {
+    text-align: center;
+  }
+
+  .hero__watermark span {
+    position: static;
+    animation: none;
+    transform: none;
+  }
 }
 
 .hero__content {

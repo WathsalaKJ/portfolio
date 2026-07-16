@@ -2,7 +2,11 @@ export default function Hero() {
   return (
     <section className="hero" id="home">
       <div className="hero__watermark" aria-hidden="true">
-        SANDUNI
+        {"SANDUNI".split("").map((letter, i) => (
+          <span key={i} style={{ "--i": i } as React.CSSProperties}>
+            {letter}
+          </span>
+        ))}
       </div>
 
       <div className="hero__content">
