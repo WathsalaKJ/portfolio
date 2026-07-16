@@ -33,20 +33,20 @@
 }
 
 :root[data-theme="light"] {
-  /* ===== Light theme (cool slate scale) ===== */
-  --bg-900: #cdd7e5;
-  --bg-800: #dde4ef;
-  --bg-700: #d5deeb;
-  --bg-600: #c0cfe4;
+  /* ===== Light theme (blue-tinted slate scale) ===== */
+  --bg-900: #bacde8;
+  --bg-800: #cedef3;
+  --bg-700: #c4d7f0;
+  --bg-600: #abc6ea;
   --surface: #ffffff;
   --accent: #2563eb;
   --accent-soft: #1d4ed8;
   --accent-glow: rgba(37, 99, 235, 0.3);
   --text: #0e1c38;
-  --muted: #566178;
-  --watermark: rgba(37, 99, 235, 0.08);
+  --muted: #4f5e78;
+  --watermark: rgba(37, 99, 235, 0.09);
 
-  --nav-bg: rgba(221, 228, 239, 0.7);
+  --nav-bg: rgba(206, 222, 243, 0.72);
   --nav-bg-scrolled: rgba(255, 255, 255, 0.9);
   --panel-bg: rgba(255, 255, 255, 0.97);
   --glass-bg: rgba(255, 255, 255, 0.7);
