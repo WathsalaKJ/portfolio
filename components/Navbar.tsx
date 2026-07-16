@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const LINKS = [
   { label: "Home", href: "#home" },
@@ -40,38 +41,42 @@ export default function Navbar() {
           SW<span>.</span>
         </a>
 
-        <button
-          className={`navbar__burger ${open ? "is-open" : ""}`}
-          aria-label="Toggle menu"
-          onClick={() => setOpen(!open)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-
-        <ul className={`navbar__links ${open ? "is-open" : ""}`}>
-          {LINKS.map((link) => (
-            <li key={link.href}>
+        <div className="navbar__right">
+          <ul className={`navbar__links ${open ? "is-open" : ""}`}>
+            {LINKS.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className={active === link.href ? "active" : ""}
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+            <li>
               <a
-                href={link.href}
-                className={active === link.href ? "active" : ""}
+                href="#contact"
+                className={`navbar__cta ${active === "#contact" ? "active" : ""}`}
                 onClick={() => setOpen(false)}
               >
-                {link.label}
+                Contact Us
               </a>
             </li>
-          ))}
-          <li>
-            <a
-              href="#contact"
-              className={`navbar__cta ${active === "#contact" ? "active" : ""}`}
-              onClick={() => setOpen(false)}
-            >
-              Contact Us
-            </a>
-          </li>
-        </ul>
+          </ul>
+
+          <ThemeToggle />
+
+          <button
+            className={`navbar__burger ${open ? "is-open" : ""}`}
+            aria-label="Toggle menu"
+            onClick={() => setOpen(!open)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
       </nav>
     </header>
   );
