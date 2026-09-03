@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="hero" id="home">
@@ -22,8 +24,13 @@ export default function Hero() {
         </div>
 
         <div className="hero__photo">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/profile-cutout.png" alt="Sanduni Wathsala" />
+          <Image
+            src="/profile-cutout.png"
+            alt="Sanduni Wathsala"
+            width={1254}
+            height={1254}
+            priority
+          />
         </div>
       </div>
 

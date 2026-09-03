@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <section className="about" id="about">
@@ -7,27 +9,23 @@ export default function About() {
 
       <div className="about__inner">
         <div className="about__photo">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/profile.png" alt="Sanduni Wathsala" />
+          <Image
+            src="/profile.png"
+            alt="Sanduni Wathsala"
+            width={1254}
+            height={1254}
+          />
         </div>
 
         <div className="about__text">
           <p>
-            I&apos;m an IT undergraduate with a deep interest in web development,
-            software engineering, and UI/UX design. My technical journey spans
-            building responsive and scalable web applications, exploring
-            frameworks, and working with both relational and NoSQL databases. I
-            enjoy bridging design and functionality — crafting interfaces that
-            are not only visually appealing but also intuitive and
-            performance-driven.
+            I&apos;Motivated IT and Management undergraduate with hands-on experience in full-stack web development using modern 
+                   technologies such as Python, Next.js, React, Node.js, Supabase, and MySQL. Skilled in building scalable applications 
+                  with a strong focus on user experience and data management. Proven ability to collaborate in team environments and 
+                   contribute to both frontend interfaces and backend logic. Passionate about creating impactful solutions and 
+                  continuously learning new tools and frameworks.
           </p>
-          <p>
-            Alongside my tech projects, I bring creativity into digital design
-            and custom artwork. Driven by innovation, problem-solving, and
-            continuous learning, I&apos;m passionate about exploring how technology
-            and design can come together to create impactful real-world
-            solutions.
-          </p>
+        
           <a href="#" className="btn-primary">
             Grab My CV
           </a>
