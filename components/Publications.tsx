@@ -9,31 +9,22 @@ type Publication = {
 
 const PUBLICATIONS: Publication[] = [
   {
-    title: "How to Build a Scalable REST API with Spring Boot",
+    title: "How to Build an AI Recommendation Engine for Business Dashboards",
     excerpt:
-      "A practical walkthrough of designing clean, versioned REST endpoints, layered architecture, and error handling for production services.",
-    date: "Mar 2025",
-    readTime: "8 min read",
+      "A practical guide to building an LLM-powered recommendation engine on Claude — system architecture, prompt engineering, API integration, and production considerations, without training a custom model.",
+    date: "Aug 2026",
+    readTime: "16 min read",
+    tag: "AI",
+    link: "https://medium.com/@sandunikekulawala/how-to-build-an-ai-recommendation-engine-for-business-dashboards-02f208bdc73b",
+  },
+  {
+    title: "The 500 Error That Only Happened on Our Biggest Customers",
+    excerpt:
+      "A debugging story about an intermittent 500 error that only hit our biggest customers — tracing it to PostgREST's URL-length limits and fixing it with sequential batching instead of parallelism.",
+    date: "Aug 2026",
+    readTime: "3 min read",
     tag: "Backend",
-    link: "https://medium.com/@dev/how-to-build-a-scalable-rest-api-with-spring-boot",
-  },
-  {
-    title: "Understanding React Server Components in Next.js 15",
-    excerpt:
-      "Breaking down the mental model behind server components, streaming, and when to reach for the client boundary in the App Router.",
-    date: "Feb 2025",
-    readTime: "6 min read",
-    tag: "Frontend",
-    link: "https://medium.com/@dev/understanding-react-server-components-in-nextjs-15",
-  },
-  {
-    title: "A Beginner's Guide to Cybersecurity Incident Response",
-    excerpt:
-      "The core phases of incident response, from detection to recovery, and the lessons I learned building an AI-driven reporting platform.",
-    date: "Jan 2025",
-    readTime: "10 min read",
-    tag: "Security",
-    link: "https://medium.com/@dev/a-beginners-guide-to-cybersecurity-incident-response",
+    link: "https://medium.com/@sandunikekulawala/the-500-error-that-only-happened-on-our-biggest-customers-d42fac1e7bd5",
   },
 ];
 
