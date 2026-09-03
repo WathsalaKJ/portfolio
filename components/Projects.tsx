@@ -11,6 +11,7 @@ type Project = {
 };
 
 const PROJECTS: Project[] = [
+  // TODO: add link
   {
     title: "Report Analysis System",
     description:
@@ -18,6 +19,7 @@ const PROJECTS: Project[] = [
     emoji: "📊",
     thumbClass: "thumb-a",
   },
+  // TODO: add link
   {
     title: "Healthcare Platform",
     description:
@@ -25,6 +27,7 @@ const PROJECTS: Project[] = [
     emoji: "🩺",
     thumbClass: "thumb-b",
   },
+  // TODO: add link
   {
     title: "Cyber Incident Management",
     description:
@@ -32,6 +35,7 @@ const PROJECTS: Project[] = [
     emoji: "🛡️",
     thumbClass: "thumb-c",
   },
+  // TODO: add link
   {
     title: "Micro-Controller Hardware Project",
     description:
@@ -39,6 +43,7 @@ const PROJECTS: Project[] = [
     emoji: "🎵",
     thumbClass: "thumb-d",
   },
+  // TODO: add link
   {
     title: "Project Management System",
     description:
