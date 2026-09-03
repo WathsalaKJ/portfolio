@@ -736,6 +736,7 @@ section {
 .thumb-c { background: linear-gradient(135deg, #0d1f4d, #1c4e89); }
 .thumb-d { background: linear-gradient(135deg, #182860, #2f5fa3); }
 .thumb-e { background: linear-gradient(135deg, #10234f, #35548e); }
+.thumb-f { background: linear-gradient(135deg, #142a56, #3f6bb0); }
 
 .projects__card h3 {
   font-size: 1.25rem;

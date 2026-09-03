@@ -11,45 +11,53 @@ type Project = {
 };
 
 const PROJECTS: Project[] = [
-  // TODO: add link
+  // TODO: add link — no public repo found (built for Dart Global Logistics Inc.)
   {
-    title: "Report Analysis System",
+    title: "Digital Employee Performance Management System (EPMS)",
     description:
-      "A comprehensive data analytics platform delivering detailed insights on sales, orders, and customer behaviour for an e-commerce platform.",
-    emoji: "📊",
+      "A role-based performance management system for a logistics company across 25 countries — KPI evaluation, potential-assessment workflows, and a live bell-curve analytics engine scoped by a six-tier org hierarchy.",
+    emoji: "📈",
     thumbClass: "thumb-a",
   },
-  // TODO: add link
+  // TODO: add link — no public repo found
   {
-    title: "Healthcare Platform",
+    title: "EcoSync — Home Solar Panel Output Forecaster",
     description:
-      "A full-stack care platform designed for patients, doctors, and service providers with appointment scheduling and health tracking.",
-    emoji: "🩺",
+      "A solar-output forecasting platform with a live weather-data pipeline and a Random Forest model trained on real generation data, cutting prediction error from 38.8% to 14.4% MAPE.",
+    emoji: "☀️",
     thumbClass: "thumb-b",
   },
-  // TODO: add link
   {
-    title: "Cyber Incident Management",
+    title: "Snapense — AI-Powered Expense Tracker",
     description:
-      "A production-ready, AI-driven cybersecurity incident management platform that simplifies incident reporting and enhances threat analysis.",
-    emoji: "🛡️",
+      "A full-stack mobile expense tracker with a vision-LLM pipeline that auto-extracts and categorizes receipts, plus scikit-learn anomaly detection for unusual spending.",
+    emoji: "💸",
     thumbClass: "thumb-c",
+    link: "https://github.com/WathsalaKJ/snapense",
   },
-  // TODO: add link
+  // TODO: add link — live demo URL not available
   {
-    title: "Micro-Controller Hardware Project",
+    title: "PureGuard — IoT-Based Museum Artifact Protection System",
     description:
-      "An innovative wearable project designed to promote physical activity and mental engagement in children through interactive play.",
-    emoji: "🎵",
+      "An IoT and embedded-systems project pairing NodeMCU/Arduino hardware with a real-time Firebase cloud app for environmental monitoring and artifact security.",
+    emoji: "🛡️",
     thumbClass: "thumb-d",
   },
-  // TODO: add link
   {
-    title: "Project Management System",
+    title: "SoulBalance — Wellness Blog Platform",
     description:
-      "A full-stack web application enabling users to manage their portfolio content with full CRUD functionalities and role-based access.",
-    emoji: "🗂️",
+      "A full-stack wellness blog platform with authentication, blog CRUD via REST API, a rich-text editor with image upload, and a dual guest/authenticated rating system.",
+    emoji: "🧘",
     thumbClass: "thumb-e",
+    link: "https://github.com/WathsalaKJ/SoulBalance",
+  },
+  {
+    title: "This Portfolio",
+    description:
+      "This personal portfolio site, built with Next.js 15, React 19, TypeScript, and Tailwind CSS v4.",
+    emoji: "🌐",
+    thumbClass: "thumb-f",
+    link: "https://github.com/WathsalaKJ/portfolio",
   },
 ];
 
