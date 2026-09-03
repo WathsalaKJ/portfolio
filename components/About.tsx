@@ -26,7 +26,7 @@ export default function About() {
                   continuously learning new tools and frameworks.
           </p>
         
-          <a href="#" className="btn-primary">
+          <a href="/Sanduni_Wathsala_CV.pdf" download className="btn-primary">
             Grab My CV
           </a>
         </div>
