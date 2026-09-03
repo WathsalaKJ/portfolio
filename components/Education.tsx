@@ -8,7 +8,7 @@ const EDUCATION: EducationItem[] = [
   {
     period: "2024 — Present",
     title: "BSc (Hons) in Information Technology & Management",
-    place: "University Of Moratuwa",
+    place: "University of Moratuwa",
   },
   {
     period: "2019 — 2022",
