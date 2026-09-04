@@ -11,21 +11,21 @@ type Project = {
 };
 
 const PROJECTS: Project[] = [
-  // TODO: add link — no public repo found (built for Dart Global Logistics Inc.)
   {
     title: "Digital Employee Performance Management System (EPMS)",
     description:
       "A role-based performance management system for a logistics company across 25 countries — KPI evaluation, potential-assessment workflows, and a live bell-curve analytics engine scoped by a six-tier org hierarchy.",
     emoji: "📈",
     thumbClass: "thumb-a",
+    link: "https://github.com/madhusiva19/pms/tree/dev-final",
   },
-  // TODO: add link — no public repo found
   {
     title: "EcoSync — Home Solar Panel Output Forecaster",
     description:
       "A solar-output forecasting platform with a live weather-data pipeline and a Random Forest model trained on real generation data, cutting prediction error from 38.8% to 14.4% MAPE.",
     emoji: "☀️",
     thumbClass: "thumb-b",
+    link: "https://github.com/PraneepaTharushini/EcoSync/tree/Development",
   },
   {
     title: "Snapense — AI-Powered Expense Tracker",
@@ -35,13 +35,13 @@ const PROJECTS: Project[] = [
     thumbClass: "thumb-c",
     link: "https://github.com/WathsalaKJ/snapense",
   },
-  // TODO: add link — live demo URL not available
   {
     title: "PureGuard — IoT-Based Museum Artifact Protection System",
     description:
       "An IoT and embedded-systems project pairing NodeMCU/Arduino hardware with a real-time Firebase cloud app for environmental monitoring and artifact security.",
     emoji: "🛡️",
     thumbClass: "thumb-d",
+    link: "https://pureguard-9c71a.web.app/",
   },
   {
     title: "SoulBalance — Wellness Blog Platform",
@@ -49,7 +49,7 @@ const PROJECTS: Project[] = [
       "A full-stack wellness blog platform with authentication, blog CRUD via REST API, a rich-text editor with image upload, and a dual guest/authenticated rating system.",
     emoji: "🧘",
     thumbClass: "thumb-e",
-    link: "https://github.com/WathsalaKJ/SoulBalance",
+    link: "https://github.com/WathsalaKJ/wellness-blog",
   },
   {
     title: "This Portfolio",
