@@ -7,45 +7,48 @@ type SkillGroup = { category: string; skills: Skill[] };
 
 const SKILL_GROUPS: SkillGroup[] = [
   {
-    category: "Frontend",
+    category: "Languages",
     skills: [
+      { name: "Python", icon: `${DEVICON}/python/python-original.svg` },
+      { name: "Java", icon: `${DEVICON}/java/java-original.svg` },
+      { name: "C", icon: `${DEVICON}/c/c-original.svg` },
       { name: "JavaScript", icon: `${DEVICON}/javascript/javascript-original.svg` },
-      { name: "Angular", icon: `${DEVICON}/angularjs/angularjs-original.svg` },
-      { name: "React", icon: `${DEVICON}/react/react-original.svg` },
-      { name: "Bootstrap", icon: `${DEVICON}/bootstrap/bootstrap-original.svg` },
-      { name: "Tailwind", icon: `${DEVICON}/tailwindcss/tailwindcss-original.svg` },
+      { name: "TypeScript", icon: `${DEVICON}/typescript/typescript-original.svg` },
+      { name: "PHP", icon: `${DEVICON}/php/php-original.svg` },
     ],
   },
   {
-    category: "Backend",
+    category: "Frameworks & Libraries",
     skills: [
+      { name: "React", icon: `${DEVICON}/react/react-original.svg` },
+      { name: "React Native", icon: `${DEVICON}/react/react-original.svg` },
+      { name: "Next.js", icon: `${DEVICON}/nextjs/nextjs-original.svg` },
       { name: "Node.js", icon: `${DEVICON}/nodejs/nodejs-original.svg` },
-      { name: "Express", icon: `${DEVICON}/express/express-original.svg` },
-      { name: ".NET Core", icon: `${DEVICON}/dotnetcore/dotnetcore-original.svg` },
-      { name: "Firebase", icon: `${DEVICON}/firebase/firebase-original.svg` },
+      { name: "Flask", icon: `${DEVICON}/flask/flask-original.svg` },
+      { name: "FastAPI", icon: `${DEVICON}/fastapi/fastapi-original.svg` },
+      { name: "Tailwind CSS", icon: `${DEVICON}/tailwindcss/tailwindcss-original.svg` },
+      { name: "scikit-learn", icon: `${DEVICON}/scikitlearn/scikitlearn-original.svg` },
     ],
   },
   {
-    category: "Database",
+    category: "Databases & Cloud",
     skills: [
       { name: "MySQL", icon: `${DEVICON}/mysql/mysql-original.svg` },
-      { name: "MongoDB", icon: `${DEVICON}/mongodb/mongodb-original.svg` },
+      { name: "PostgreSQL", icon: `${DEVICON}/postgresql/postgresql-original.svg` },
+      { name: "Supabase", icon: `${DEVICON}/supabase/supabase-original.svg` },
+      { name: "Firebase", icon: `${DEVICON}/firebase/firebase-original.svg` },
+      { name: "Firestore", icon: `${DEVICON}/firebase/firebase-original.svg` },
     ],
   },
   {
-    category: "Design",
+    category: "Tools & Platforms",
     skills: [
-      { name: "Figma", icon: `${DEVICON}/figma/figma-original.svg` },
-      { name: "GIMP", icon: `${DEVICON}/gimp/gimp-original.svg` },
-    ],
-  },
-  {
-    category: "Tools",
-    skills: [
-      { name: "Postman", icon: `${DEVICON}/postman/postman-original.svg` },
       { name: "Git", icon: `${DEVICON}/git/git-original.svg` },
       { name: "GitHub", icon: `${DEVICON}/github/github-original.svg` },
-      { name: "Jira", icon: `${DEVICON}/jira/jira-original.svg` },
+      { name: "Docker", icon: `${DEVICON}/docker/docker-original.svg` },
+      { name: "Vercel", icon: `${DEVICON}/vercel/vercel-original.svg` },
+      { name: "Postman", icon: `${DEVICON}/postman/postman-original.svg` },
+      { name: "AWS", icon: `${DEVICON}/amazonwebservices/amazonwebservices-original-wordmark.svg` },
     ],
   },
 ];
