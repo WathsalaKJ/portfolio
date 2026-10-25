@@ -591,33 +591,88 @@ section {
   pointer-events: none;
 }
 
-.skills__rows {
+.skills__carousel {
   position: relative;
-  max-width: 980px;
+  max-width: 1280px;
   margin: 4rem auto 0;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+  padding: 0 3.5rem;
 }
 
-.skills__row {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  align-items: center;
-  gap: 2rem;
+.skills__track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0.25rem 1.5rem;
+  scrollbar-width: none;
+}
+
+.skills__track::-webkit-scrollbar {
+  display: none;
+}
+
+.skills__card {
+  flex: 0 0 min(400px, 86vw);
+  scroll-snap-align: start;
+  background: var(--surface);
+  border: 1px solid rgba(94, 168, 255, 0.16);
+  border-radius: var(--radius);
+  padding: 1.8rem 1.8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.skills__card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(94, 168, 255, 0.45);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45), 0 0 30px rgba(94, 168, 255, 0.1);
 }
 
 .skills__category {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
   font-weight: 800;
-  text-align: right;
+  text-align: left;
   color: var(--text);
+  margin-bottom: 1.4rem;
 }
 
 .skills__icons {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.6rem;
+  gap: 1.3rem;
+}
+
+.skills__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(94, 168, 255, 0.3);
+  background: var(--pill-bg);
+  color: var(--text);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s, box-shadow 0.25s;
+}
+
+.skills__nav:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+  box-shadow: 0 0 22px var(--accent-glow);
+}
+
+.skills__nav.prev {
+  left: 0.4rem;
+}
+
+.skills__nav.next {
+  right: 0.4rem;
 }
 
 .skills__badge {
@@ -655,23 +710,23 @@ section {
 }
 
 @media (max-width: 760px) {
-  .skills__row {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
-  }
-
-  .skills__category {
-    text-align: center;
-  }
-
   .skills__icons {
-    justify-content: center;
     gap: 1.1rem;
   }
 
   .skills__badge {
     width: 72px;
     height: 72px;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills__carousel {
+    padding: 0 1rem;
+  }
+
+  .skills__nav {
+    display: none;
   }
 }
 

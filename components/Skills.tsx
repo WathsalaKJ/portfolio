@@ -1,5 +1,7 @@
 "use client";
 
+import { useRef } from "react";
+
 const DEVICON = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons";
 
 type Skill = { name: string; icon: string };
@@ -54,33 +56,61 @@ const SKILL_GROUPS: SkillGroup[] = [
 ];
 
 export default function Skills() {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  const scrollByCard = (direction: 1 | -1) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const card = track.querySelector<HTMLElement>(".skills__card");
+    const step = card ? card.offsetWidth + 24 : 360;
+    track.scrollBy({ left: direction * step, behavior: "smooth" });
+  };
+
   return (
     <section className="skills" id="skills">
       <h2 className="section-title">Skills</h2>
 
-      <div className="skills__rows">
-        {SKILL_GROUPS.map((group) => (
-          <div className="skills__row" key={group.category}>
-            <h3 className="skills__category">{group.category}</h3>
-            <div className="skills__icons">
-              {group.skills.map((skill) => (
-                <div className="skills__badge" key={skill.name} title={skill.name}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={skill.icon}
-                    alt={skill.name}
-                    loading="lazy"
-                    onError={(e) => {
-                      const img = e.currentTarget;
-                      img.style.display = "none";
-                      img.parentElement!.setAttribute("data-fallback", skill.name);
-                    }}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
+      <div className="skills__carousel">
+        <button
+          className="skills__nav prev"
+          aria-label="Previous skill categories"
+          onClick={() => scrollByCard(-1)}
+        >
+          &#10094;
+        </button>
+
+        <div className="skills__track" ref={trackRef}>
+          {SKILL_GROUPS.map((group) => (
+            <article className="skills__card" key={group.category}>
+              <h3 className="skills__category">{group.category}</h3>
+              <div className="skills__icons">
+                {group.skills.map((skill) => (
+                  <div className="skills__badge" key={skill.name} title={skill.name}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={skill.icon}
+                      alt={skill.name}
+                      loading="lazy"
+                      onError={(e) => {
+                        const img = e.currentTarget;
+                        img.style.display = "none";
+                        img.parentElement!.setAttribute("data-fallback", skill.name);
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <button
+          className="skills__nav next"
+          aria-label="Next skill categories"
+          onClick={() => scrollByCard(1)}
+        >
+          &#10095;
+        </button>
       </div>
     </section>
   );
