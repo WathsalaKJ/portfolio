@@ -2,9 +2,24 @@
 
 import { useEffect, useState } from "react";
 
-const MINIMUM_DISPLAY_TIME = 1800;
-const MAXIMUM_DISPLAY_TIME = 5000;
+const MINIMUM_DISPLAY_TIME = 5000;
+const MAXIMUM_DISPLAY_TIME = 6000;
 const LOADER_STEPS = ["Ideate.", "Design.", "Develop.", "Innovate."];
+const STARS = Array.from({ length: 42 }, (_, index) => {
+  const seed = index + 1;
+  const random = (salt: number) => {
+    const value = Math.sin(seed * salt) * 10000;
+    return value - Math.floor(value);
+  };
+
+  return {
+    left: `${random(12.9898) * 100}%`,
+    size: `${1 + Math.round(random(78.233) * 2)}px`,
+    duration: `${3.8 + random(37.719) * 0.7}s`,
+    delay: `${random(93.989) * 0.25}s`,
+    opacity: 0.35 + random(43.758) * 0.6,
+  };
+});
 
 export default function SiteLoader() {
   const [isVisible, setIsVisible] = useState(true);
@@ -81,7 +96,22 @@ export default function SiteLoader() {
       aria-label="Loading portfolio"
       aria-hidden={!isVisible}
     >
-      <div className="site-loader__stars" aria-hidden="true" />
+      <div className="site-loader__stars" aria-hidden="true">
+        {STARS.map((star, index) => (
+          <span
+            className="site-loader__star"
+            key={index}
+            style={{
+              left: star.left,
+              width: star.size,
+              height: star.size,
+              animationDuration: star.duration,
+              animationDelay: star.delay,
+              opacity: star.opacity,
+            }}
+          />
+        ))}
+      </div>
       <div className="site-loader__content">
         <h1 className="site-loader__name">
           Sanduni <span>Wathsala</span>
