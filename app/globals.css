@@ -1280,11 +1280,25 @@ section {
 
 .education__card {
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
   background: var(--surface);
   border: 1px solid rgba(94, 168, 255, 0.16);
   border-radius: var(--radius);
   padding: 1.5rem 1.75rem;
   transition: border-color 0.25s, transform 0.25s;
+}
+
+.education__logo {
+  flex: 0 0 76px;
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+}
+
+.education__details {
+  min-width: 0;
 }
 
 .education__card:hover {
@@ -1321,6 +1335,24 @@ section {
 .education__card p {
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+@media (max-width: 480px) {
+  .education__card {
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .education__logo {
+    flex-basis: 56px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .education__card h3 {
+    font-size: 1.05rem;
+  }
 }
 
 /* ============================================================
