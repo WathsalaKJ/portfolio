@@ -6,10 +6,11 @@ import ThemeToggle from "./ThemeToggle";
 const LINKS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Publications", href: "#publications" },
   { label: "Education", href: "#education" },
+  { label: "Technical Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Certificates", href: "#certificates" },
+  { label: "Publications", href: "#publications" },
 ];
 
 export default function Navbar() {
