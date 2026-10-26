@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import StarfieldBackground from "@/components/StarfieldBackground";
 import SiteLoader from "@/components/SiteLoader";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -12,6 +13,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
+      <StarfieldBackground />
       <SiteLoader />
       <Navbar />
       <main>

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const MINIMUM_DISPLAY_TIME = 5000;
 const MAXIMUM_DISPLAY_TIME = 6000;
 const LOADER_STEPS = ["Ideate.", "Design.", "Develop.", "Innovate."];
-const STARS = Array.from({ length: 42 }, (_, index) => {
+const STARS = Array.from({ length: 90 }, (_, index) => {
   const seed = index + 1;
   const random = (salt: number) => {
     const value = Math.sin(seed * salt) * 10000;
@@ -13,11 +13,11 @@ const STARS = Array.from({ length: 42 }, (_, index) => {
   };
 
   return {
-    left: `${random(12.9898) * 100}%`,
-    size: `${1 + Math.round(random(78.233) * 2)}px`,
-    duration: `${3.8 + random(37.719) * 0.7}s`,
-    delay: `${random(93.989) * 0.25}s`,
-    opacity: 0.35 + random(43.758) * 0.6,
+    left: `${(random(12.9898) * 100).toFixed(2)}%`,
+    size: `${(1 + random(78.233) * 4).toFixed(2)}px`,
+    duration: `${(3.8 + random(37.719) * 0.7).toFixed(2)}s`,
+    delay: `${(random(93.989) * 0.5).toFixed(2)}s`,
+    opacity: (0.35 + random(43.758) * 0.6).toFixed(3),
   };
 });
 

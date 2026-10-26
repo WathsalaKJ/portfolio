@@ -30,6 +30,9 @@
   --border-soft: rgba(94, 168, 255, 0.16);
   --border-hover: rgba(94, 168, 255, 0.45);
   --on-accent: var(--bg-900);
+  --site-section-bg: rgba(6, 12, 28, 0.55);
+  --site-section-alt-bg: rgba(6, 12, 28, 0.55);
+  --site-section-gradient-end: rgba(6, 12, 28, 0.55);
 }
 
 :root[data-theme="light"] {
@@ -55,6 +58,9 @@
   --border-soft: rgba(37, 99, 235, 0.2);
   --border-hover: rgba(37, 99, 235, 0.5);
   --on-accent: #ffffff;
+  --site-section-bg: rgba(186, 205, 232, 0.55);
+  --site-section-alt-bg: rgba(186, 205, 232, 0.55);
+  --site-section-gradient-end: rgba(186, 205, 232, 0.55);
 }
 
 :root {
@@ -71,6 +77,21 @@
 
 body {
   transition: background 0.3s ease, color 0.3s ease;
+}
+
+.starfield-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+main,
+.footer {
+  position: relative;
+  z-index: 1;
 }
 
 .site-loader {
@@ -512,7 +533,7 @@ section {
   overflow: hidden;
   background:
     radial-gradient(ellipse 80% 60% at 50% -10%, rgba(94, 168, 255, 0.14), transparent 65%),
-    linear-gradient(180deg, var(--bg-700) 0%, var(--bg-800) 70%, var(--bg-900) 100%);
+    linear-gradient(180deg, var(--site-section-gradient-end) 0%, var(--site-section-alt-bg) 70%, var(--site-section-bg) 100%);
 }
 
 .hero__watermark {
@@ -673,7 +694,7 @@ section {
    ============================================================ */
 .about {
   padding: 3rem 1.5rem 7rem;
-  background: var(--bg-900);
+  background: var(--site-section-bg);
   overflow: hidden;
 }
 
@@ -738,7 +759,7 @@ section {
     radial-gradient(circle at 85% 15%, rgba(94, 168, 255, 0.08) 0, transparent 28%),
     radial-gradient(circle at 70% 80%, rgba(94, 168, 255, 0.09) 0, transparent 32%),
     radial-gradient(circle at 25% 85%, rgba(94, 168, 255, 0.07) 0, transparent 26%),
-    var(--bg-800);
+    var(--site-section-alt-bg);
 }
 
 .skills::before {
@@ -978,7 +999,7 @@ section {
    ============================================================ */
 .projects {
   padding: 6rem 0;
-  background: linear-gradient(180deg, var(--bg-800), var(--bg-700));
+  background: linear-gradient(180deg, var(--site-section-alt-bg), var(--site-section-gradient-end));
 }
 
 .projects__carousel {
@@ -1114,7 +1135,7 @@ section {
    ============================================================ */
 .publications {
   padding: 6rem 1.5rem;
-  background: var(--bg-900);
+  background: var(--site-section-bg);
 }
 
 .publications__grid {
@@ -1199,7 +1220,7 @@ section {
    ============================================================ */
 .certificates {
   padding: 6rem 1.5rem;
-  background: var(--bg-800);
+  background: var(--site-section-alt-bg);
 }
 
 .certificates__grid {
@@ -1281,7 +1302,7 @@ section {
 .education {
   position: relative;
   padding: 6rem 1.5rem;
-  background: var(--bg-900);
+  background: var(--site-section-bg);
 }
 
 .education::before {
@@ -1413,7 +1434,7 @@ section {
    ============================================================ */
 .footer {
   padding: 6rem 1.5rem 2.5rem;
-  background: var(--bg-900);
+  background: var(--site-section-bg);
   text-align: center;
   border-top: 1px solid rgba(94, 168, 255, 0.12);
 }
