@@ -29,6 +29,19 @@ npm run start   # serve the production build
 npm run lint    # run ESLint
 ```
 
+## Contact form email
+
+The contact form sends submissions through the [Resend](https://resend.com/)
+API from a Next.js server route. Copy `.env.example` to `.env.local` and set:
+
+- `RESEND_API_KEY` to an API key from Resend.
+- `CONTACT_FROM_EMAIL` to an address on a domain verified with Resend.
+- `CONTACT_TO_EMAIL` to the inbox that should receive submissions.
+
+Restart the dev server after changing environment variables. Keep the API key
+server-side; do not add it to a `NEXT_PUBLIC_` variable. The form reports an
+error if the service is not configured or cannot accept a message.
+
 ## Project structure
 
 ```text
