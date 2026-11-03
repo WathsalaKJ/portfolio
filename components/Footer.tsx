@@ -1,33 +1,61 @@
 "use client";
 
+import { useState } from "react";
 import type { FormEvent } from "react";
 
-const CONTACT_EMAIL = "sandunikekulawala@gmail.com";
+type SubmissionStatus = {
+  type: "success" | "error";
+  message: string;
+};
 
 export default function Footer() {
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionStatus, setSubmissionStatus] =
+    useState<SubmissionStatus | null>(null);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
-    const name = String(formData.get("name") ?? "").trim();
-    const email = String(formData.get("email") ?? "").trim();
-    const message = String(formData.get("message") ?? "").trim();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
 
-    if (!name || !email || !message) {
-      return;
+    setIsSubmitting(true);
+    setSubmissionStatus(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+        }),
+      });
+
+      const result: { error?: string; message?: string } =
+        await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error ?? "Your message could not be sent. Please try again.");
+      }
+
+      form.reset();
+      setSubmissionStatus({
+        type: "success",
+        message: result.message ?? "Your message has been sent.",
+      });
+    } catch (error) {
+      setSubmissionStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Your message could not be sent. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
-
-    const subject = `Portfolio contact from ${name}`;
-    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-    const mailtoLink = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    const mailtoLinkAnchor = document.createElement("a");
-    mailtoLinkAnchor.href = mailtoLink;
-    mailtoLinkAnchor.style.display = "none";
-    document.body.appendChild(mailtoLinkAnchor);
-    mailtoLinkAnchor.click();
-    document.body.removeChild(mailtoLinkAnchor);
-    event.currentTarget.reset();
   }
 
   return (
@@ -49,6 +77,7 @@ export default function Footer() {
             name="name"
             placeholder="Name"
             autoComplete="name"
+            maxLength={120}
             required
           />
           <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -63,6 +92,7 @@ export default function Footer() {
             name="email"
             placeholder="Email"
             autoComplete="email"
+            maxLength={254}
             required
           />
           <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -76,6 +106,7 @@ export default function Footer() {
             name="message"
             placeholder="Message"
             rows={3}
+            maxLength={5000}
             required
           />
           <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -83,15 +114,28 @@ export default function Footer() {
           </svg>
         </label>
 
-        <button className="footer__submit" type="submit">
-          Send Message
+        <button
+          className="footer__submit"
+          type="submit"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Sending..." : "Send Message"}
           <svg aria-hidden="true" viewBox="0 0 24 24">
             <path d="m2.2 21 19.5-8.35a.7.7 0 0 0 0-1.3L2.2 3a.7.7 0 0 0-.95.82l1.9 6.8 10.1 1.38-10.1 1.38-1.9 6.8a.7.7 0 0 0 .95.82Z" />
           </svg>
         </button>
         <p className="footer__form-note">
-          This opens your email app with your message ready to send.
+          Your message will be delivered directly to my inbox.
         </p>
+        {submissionStatus && (
+          <p
+            className={`footer__form-note footer__form-note--${submissionStatus.type}`}
+            role={submissionStatus.type === "error" ? "alert" : "status"}
+            aria-live="polite"
+          >
+            {submissionStatus.message}
+          </p>
+        )}
       </form>
 
       <div className="footer__socials">
