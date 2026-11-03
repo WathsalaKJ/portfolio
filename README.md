@@ -36,11 +36,13 @@ API from a Next.js server route. Copy `.env.example` to `.env.local` and set:
 
 - `RESEND_API_KEY` to an API key from Resend.
 - `CONTACT_FROM_EMAIL` to an address on a domain verified with Resend.
-- `CONTACT_TO_EMAIL` to the inbox that should receive submissions.
+- `CONTACT_TO_EMAIL` to override the recipient inbox (defaults to
+  `sandunikekulawala@gmail.com`).
 
 Restart the dev server after changing environment variables. Keep the API key
-server-side; do not add it to a `NEXT_PUBLIC_` variable. The form reports an
-error if the service is not configured or cannot accept a message.
+server-side; do not add it to a `NEXT_PUBLIC_` variable. The sender address
+must use a domain verified with Resend. The form reports an error if the service
+is not configured or cannot accept a message.
 
 ## Project structure
 
