@@ -6,13 +6,21 @@ const MAX_EMAIL_LENGTH = 254;
 const MAX_MESSAGE_LENGTH = 5000;
 
 export async function POST(request: Request) {
-  const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.CONTACT_FROM_EMAIL;
-  const to = process.env.CONTACT_TO_EMAIL;
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  const from = process.env.CONTACT_FROM_EMAIL?.trim();
+  const to =
+    process.env.CONTACT_TO_EMAIL?.trim() || "sandunikekulawala@gmail.com";
 
-  if (!apiKey || !from || !to) {
+  const missingSettings = [
+    !apiKey && "RESEND_API_KEY",
+    !from && "CONTACT_FROM_EMAIL",
+  ].filter(Boolean);
+
+  if (missingSettings.length > 0) {
     return NextResponse.json(
-      { error: "The contact form is not configured yet. Please try again later." },
+      {
+        error: `Email sending is not configured. Add ${missingSettings.join(" and ")} to .env.local, then restart the dev server.`,
+      },
       { status: 503 },
     );
   }
