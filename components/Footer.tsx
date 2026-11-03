@@ -9,15 +9,25 @@ export default function Footer() {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
-    const name = String(formData.get("name") ?? "");
-    const email = String(formData.get("email") ?? "");
-    const message = String(formData.get("message") ?? "");
-    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\n${message}`,
-    );
+    const name = String(formData.get("name") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
 
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    if (!name || !email || !message) {
+      return;
+    }
+
+    const subject = `Portfolio contact from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+    const mailtoLink = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    const mailtoLinkAnchor = document.createElement("a");
+    mailtoLinkAnchor.href = mailtoLink;
+    mailtoLinkAnchor.style.display = "none";
+    document.body.appendChild(mailtoLinkAnchor);
+    mailtoLinkAnchor.click();
+    document.body.removeChild(mailtoLinkAnchor);
+    event.currentTarget.reset();
   }
 
   return (
